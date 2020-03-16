@@ -4,6 +4,8 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.NumberPicker
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -13,10 +15,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-    }
-    fun onAccess(view: View) {
-        val uri: Uri = Uri.parse("http://www.google.com")
-        val it = Intent(Intent.ACTION_VIEW, uri)
-        startActivity(it)
+        var tv : TextView = findViewById(R.id.tvId)
+        var np : NumberPicker = findViewById(R.id.npId)
+
+        //bat su kien o number picker cho textview
+        np.setOnValueChangedListener { picker, oldVal, newVal -> tv!!.text = newVal.toString() }
+        np.maxValue = 100
+        np.minValue = 0
     }
 }
+
