@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TestActivity</string>
+    <string name="app_name">MainActivity</string>
+    <string name="menu1">Settings</string>
+    <string name="menu2">Tools</string>
 </resources>
